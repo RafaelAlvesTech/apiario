@@ -1,0 +1,9 @@
+version: 'latest'
+
+services:
+  app:
+    build: .
+    container_name: apiario-saas-microservices
+    volumes:
+      - .:/home/python/app
+
