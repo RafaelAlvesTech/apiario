@@ -8,6 +8,7 @@
 	// The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
 	"dockerComposeFile": [
 		"../docker-compose.yaml",
+		"../docker-compose.override.yaml",
 		"docker-compose.yml"
 	],
 
@@ -17,7 +18,7 @@
 
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
-	"workspaceFolder": "./",
+	"workspaceFolder": "/home/python/app",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
@@ -27,7 +28,8 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"ms-python.python"
+		"ms-python.python",
+		"sourcery.sourcery"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

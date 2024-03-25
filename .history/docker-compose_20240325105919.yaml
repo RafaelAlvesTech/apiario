@@ -1,9 +1,0 @@
-version: 'latest'
-
-services:
-  app:
-    build: .
-    container_name: Micro Videos Pythons
-    volumes:
-      - .
-

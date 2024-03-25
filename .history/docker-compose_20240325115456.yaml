@@ -3,7 +3,8 @@ version: 'latest'
 services:
   app:
     build: .
-    container_name: Micro Videos Pythons
+    container_name: micro-videos-python-app
     volumes:
       - .:/home/python/app
-
+    ports:
+      - 8000:8000
