@@ -6,7 +6,10 @@ RUN apt update && apt install -y --no-install-recommends \
                     zsh \
                     curl \
                     wget \
-                    fonts-powerline
+                    fonts-powerline \
+                    pip 
+RUN curl -sSL https://pdm-project.org/install-pdm.py | python3 -
+
 
 RUN useradd -ms /bin/bash python
 
