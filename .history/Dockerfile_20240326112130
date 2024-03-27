@@ -7,10 +7,7 @@ RUN apt update && apt install -y --no-install-recommends \
                     curl \
                     wget \
                     fonts-powerline \
-                    pip \
-                    git-flow \
-                    default-jre
-                    
+                    pip 
 RUN curl -sSL https://pdm-project.org/install-pdm.py | python3 -
 
 
@@ -39,7 +36,7 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
 RUN echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc && \
     echo 'HISTFILE=/home/python/zsh/.zsh_history' >> ~/.zshrc && \
     echo 'eval "$(pdm --pep582)"' >> ~/.zshrc && \
-    echo 'eval "$(pdm --pep582)"'git >> ~/.bashrc
+    echo 'eval "$(pdm --pep582)"' >> ~/.bashrc
 
 
 CMD [ "tail", "-f", "/dev/null" ]
