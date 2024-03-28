@@ -16,7 +16,7 @@ RUN curl -sSL https://pdm-project.org/install-pdm.py | python3 -
 
 RUN useradd -ms /bin/bash python
 
-RUN pip install pdm pdm-venv
+RUN pip install --upgrade pdm pdm-venv
 
 USER python
 
@@ -39,7 +39,7 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
 RUN echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc && \
     echo 'HISTFILE=/home/python/zsh/.zsh_history' >> ~/.zshrc && \
     echo 'eval "$(pdm --pep582)"' >> ~/.zshrc && \
-    echo 'eval "$(pdm --pep582)"'git >> ~/.bashrc
+    echo 'eval "$(pdm --pep582)"'git >> ~/.zshrc
 
 
 CMD [ "tail", "-f", "/dev/null" ]
