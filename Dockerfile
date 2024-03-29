@@ -40,6 +40,8 @@ RUN echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc && \
     echo 'HISTFILE=/home/python/zsh/.zsh_history' >> ~/.zshrc && \
     echo 'eval "$(pdm --pep582)"' >> ~/.zshrc && \
     echo 'eval "$(pdm --pep582)"'git >> ~/.zshrc
+RUN 
 
 
-CMD [ "tail", "-f", "/dev/null" ]
+CMD [ "tail", "-f", "/dev/null" ][user]
+       

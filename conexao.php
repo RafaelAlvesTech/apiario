@@ -2,7 +2,7 @@
 
 file_get_contents('php://input');
 
-
+e
 
 
 $banco = "medesp76_apiario";
