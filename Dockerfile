@@ -9,7 +9,8 @@ RUN apt update && apt install -y --no-install-recommends \
                     fonts-powerline \
                     pip \
                     git-flow \
-                    default-jre
+                    default-jre \
+                    gh
                     
 RUN curl -sSL https://pdm-project.org/install-pdm.py | python3 -
 
@@ -40,7 +41,7 @@ RUN echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc && \
     echo 'HISTFILE=/home/python/zsh/.zsh_history' >> ~/.zshrc && \
     echo 'eval "$(pdm --pep582)"' >> ~/.zshrc && \
     echo 'eval "$(pdm --pep582)"'git >> ~/.zshrc
-RUN 
+
 
 
 CMD [ "tail", "-f", "/dev/null" ][user]
