@@ -13,7 +13,7 @@ services:
 
     volumes:
       # Update this to wherever you want VS Code to mount the folder of your project
-      - ..:/workspaces:cached
+      - .:/home/python/app:cached
       - ../.docker/zsh/powerlevel10k/.p10k.zsh:/home/python/.p10k.zsh:delegated
       - ../.docker/zsh/history:/home/python/zsh:delegated
 
