@@ -22,7 +22,8 @@ class Apiario:
     latitude: Optional[str] = None
     longitude: Optional[str] = None
     observacao: Optional[str] = None
- 
+
+
 print(Apiario(1,1,"bico doce"))
 
 
