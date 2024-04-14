@@ -1,6 +1,6 @@
 FROM python:3.10.2-slim
 
-RUN apt update && apt install -y --no-install-recommends && apt clean \
+RUN apt update && apt install -y --no-install-recommends \
                     default-jre \
                     git \
                     zsh \

@@ -13,9 +13,10 @@ services:
 
     volumes:
       # Update this to wherever you want VS Code to mount the folder of your project
-      - .:/home/python/app:cached
+      - ../:/workspace:delegated
       - ../.docker/zsh/powerlevel10k/.p10k.zsh:/home/python/.p10k.zsh:delegated
       - ../.docker/zsh/history:/home/python/zsh:delegated
+    
 
     # Uncomment the next four lines if you will use a ptrace-based debugger like C++, Go, and Rust.
     # cap_add:
