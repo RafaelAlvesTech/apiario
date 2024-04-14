@@ -38,7 +38,10 @@ class Apiario:
 
 # Product = namedtuple('Product', ['id', 'name']) #estudar dicionários nomeados
 
-# tudo que for externo tem que fazer um dublê de teste chamado de mock, ou seja, simular o comportamento de um objeto real, para que o teste seja leve e rápido. Exemplo se a classe envia um email vai fingir que enviou o email, mas não vai enviar de verdade.
 
+#piramides de testes
+# Os teste devem começar pelo teste unitário, depois teste de integração e por fim teste end-to-end por é uma sequencia do mais rapido e barato para mais lento e caro.
+#testar as funcionalidades da classe Apiario isso se chama test unitário ou teste de unidades, tem que ser lever e rápido exemplos como  django.models.Model que envolve banco de dados não se aplicaria
+# tudo que for externo tem que fazer um dublê de teste chamado de mock, ou seja, simular o comportamento de um objeto real, para que o teste seja leve e rápido. Exemplo se a classe envia um email vai fingir que enviou o email, mas não vai enviar de verdade.
 # para testar o django.models.Model seria outro tipo de test chamado test de integração. Testa a integração entre duas ou mais unidades.
 # e os teste end-to-end que testa a aplicação como um todo, como se fosse um usuário final e2e.
