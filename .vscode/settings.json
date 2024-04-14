@@ -12,13 +12,14 @@
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#345a81",
     "activityBar.activeBorder": "#441b30",
+    "activityBar.activeBackground": "#345a81",
     "activityBar.background": "#345a81",
     "activityBar.foreground": "#e7e7e7",
     "activityBar.inactiveForeground": "#e7e7e799",
     "activityBarBadge.background": "#441b30",
     "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#e7e7e799",
     "sash.hoverBorder": "#345a81",
     "statusBar.background": "#25415d",
     "statusBar.foreground": "#e7e7e7",
@@ -28,7 +29,6 @@
     "titleBar.activeBackground": "#25415d",
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveBackground": "#25415d99",
-    "titleBar.inactiveForeground": "#e7e7e799",
-    "commandCenter.border": "#e7e7e799"
+    "titleBar.inactiveForeground": "#e7e7e799"
   }
 }
