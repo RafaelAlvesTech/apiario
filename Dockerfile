@@ -7,17 +7,11 @@ RUN apt update && apt install -y --no-install-recommends \
                     curl \
                     wget \
                     fonts-powerline \
-                    pip \
-                    git-flow \
-                    default-jre \
-                    gh
-                    
-RUN curl -sSL https://pdm-project.org/install-pdm.py | python3 -
-
+                    procps
 
 RUN useradd -ms /bin/bash python
 
-RUN pip install --upgrade pdm pdm-venv
+RUN pip install pdm pdm-venv
 
 USER python
 
@@ -36,10 +30,9 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
     -p https://github.com/zsh-users/zsh-autosuggestions \
     -p https://github.com/zsh-users/zsh-completions \
     -a 'export TERM=xterm-256color'
-
+   
+# Configure Zsh
 RUN echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc && \
-    echo 'HISTFILE=/home/python/zsh/.zsh_history' >> ~/.zshrc && \
-
+    echo 'HISTFILE=/home/node/zsh/.zsh_history' >> ~/.zshrc
 
 CMD [ "tail", "-f", "/dev/null" ][user]
-       
