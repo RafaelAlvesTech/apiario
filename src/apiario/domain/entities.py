@@ -1,15 +1,17 @@
-from dataclasses import dataclass
-from typing import Optional
+from dataclasses import dataclass, field #estude field muda a forma que o dataclass verifica os campos, seria um classe especifica para dados.
+from typing import Optional #, NamedTuple # pesquisar sobre typing
+from datetime import datetime
+# from collections import namedtuple
 
-@dataclass()
+@dataclass() #init, repr, eq(compraração), order e hash cria construtor tipado e outros métodos mágicos. Estude também namedtuples.
 class Apiario:
-
     id: int
     id_usuario: int
+    nome: str 
     status: str = "A"
     atividade: str = "T"
-    nome: str 
     estrutura: str = "F"
+    data_criacao: Optional[datetime] = field(default_factory=lambda: datetime.now()) #estude default_factory, lambda e datetime. Ponto importante pra testes. funçãpo para gerar uma data nova em tempo de excução
     cep: Optional[str] = None
     logradouro: Optional[str] = None
     numero: Optional[str] = None
@@ -24,6 +26,19 @@ class Apiario:
     observacao: Optional[str] = None
 
 
-print(Apiario(1,1,"bico doce"))
+#testar as funcionalidades da classe Apiario isso se chama test unitário ou teste de unidades, tem que ser lever e rápido exemplos como  django.models.Model que envolve banco de dados não se aplicaria
 
+#pesquisar sobre parâmetros nomeados
 
+# class Product(NamedTuple):
+#     id: int
+#     name: str
+ 
+#NamedTuple opções para versões mais antigas do python para também impplementar classes sem precisar de construtores
+
+# Product = namedtuple('Product', ['id', 'name']) #estudar dicionários nomeados
+
+# tudo que for externo tem que fazer um dublê de teste chamado de mock, ou seja, simular o comportamento de um objeto real, para que o teste seja leve e rápido. Exemplo se a classe envia um email vai fingir que enviou o email, mas não vai enviar de verdade.
+
+# para testar o django.models.Model seria outro tipo de test chamado test de integração. Testa a integração entre duas ou mais unidades.
+# e os teste end-to-end que testa a aplicação como um todo, como se fosse um usuário final e2e.
