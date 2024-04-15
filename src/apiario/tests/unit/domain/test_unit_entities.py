@@ -5,5 +5,5 @@ from apiario.domain.entities import Apiario
 
 class TestApiarioUnit(unittest.TestCase):
     def test_if_is_a_dataclass(self):
-        pass
+        pass # o que seria o pass?
         
