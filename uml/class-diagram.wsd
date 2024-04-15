@@ -1,0 +1,18 @@
+@startuml
+
+entity Apiario
+
+Apiario : uuid id 
+Apiario : string name 
+Apiario : string description 
+Apiario : boolean is_active 
+Apiario : date created_at 
+
+Apiario : create()
+Apiario : update()
+Apiario : activate()
+Apiario : deactivate()
+Apiario : delete()
+
+@enduml
+
