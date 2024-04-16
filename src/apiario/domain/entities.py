@@ -26,6 +26,8 @@ class Apiario:
     observacao: Optional[str] = None
 
 
+
+
 #testar as funcionalidades da classe Apiario isso se chama test unitário ou teste de unidades, tem que ser lever e rápido exemplos como  django.models.Model que envolve banco de dados não se aplicaria
 
 #pesquisar sobre parâmetros nomeados
