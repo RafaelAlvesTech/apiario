@@ -1,0 +1,9 @@
+@startuml
+
+Apiario : Apicutor: -> (Criar apiario)
+Apiario : Apicutor: -> (Atualizar apiario)
+Apiario : Apicutor: -> (Excluir apiario)
+Apiario : Apiculor: -> (Consultar uma apario)
+Apiario : Apicutor: -> (Consultar apiario)
+
+@enduml
