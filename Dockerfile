@@ -36,6 +36,9 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
 RUN echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc && \
     echo 'HISTFILE=/home/node/zsh/.zsh_history' >> ~/.zshrc \
     echo 'eval "$(pdm --pep582)"' >> ~/.zshrc && \
-    echo 'eval "$(pdm --pep582)"' >> ~/.bashrc 
+    echo 'eval "$(pdm --pep582)"' >> ~/.bashrc \
+    curl https://sdk.cloud.google.com | bash \
+    gcloud components install alpha beta skaffold minikube kubectl gke-gcloud-auth-plugin
+
 
 CMD [ "tail", "-f", "/dev/null" ][user]
