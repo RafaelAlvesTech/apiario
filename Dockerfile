@@ -7,9 +7,13 @@ RUN apt update && apt install -y --no-install-recommends \
                     curl \
                     wget \
                     fonts-powerline \
-                    procps
+                    procps 
 
+s
 RUN useradd -ms /bin/bash python
+
+RUN pip install django \
+        djangorestframework
 
 RUN pip install pdm
 
