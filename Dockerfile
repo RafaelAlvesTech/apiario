@@ -9,11 +9,9 @@ RUN apt update && apt install -y --no-install-recommends \
                     fonts-powerline \
                     procps 
 
-s
+
 RUN useradd -ms /bin/bash python
 
-RUN pip install django \
-        djangorestframework
 
 RUN pip install pdm
 
@@ -39,7 +37,8 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
 # Configure Zsh
 RUN echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc && \
     echo 'HISTFILE=/home/python/zsh/.zsh_history' >> ~/.zshrc \
-    echo 'eval "$(pdm --pep582)"' >> ~/.zshrc 
+    echo 'eval "$(pdm --pep582)"' >> ~/.zshrc && \
+    echo 'eval "$(pdm --pep582)"' >> ~/.bashrc 
 
 
 CMD [ "tail", "-f", "/dev/null" ][user]
