@@ -17,5 +17,4 @@ distribution = false
 [tool.pdm.dev-dependencies]
 dev = [
     "autopep8>=2.1.0",
-    "pylint>=3.1.0",
 ]

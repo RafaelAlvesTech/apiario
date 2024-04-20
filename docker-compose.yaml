@@ -3,7 +3,8 @@ version: 'latest'
 services:
   app:
     build: .
-    container_name: micro-videos-python-app
+    container_name: apiario
+    command: ./.docker/start-app.sh
     volumes:
       - .:/home/python/app
     ports:
