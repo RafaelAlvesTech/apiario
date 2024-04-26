@@ -3,12 +3,16 @@ from datetime import datetime
 import unittest
 from apiario.domain.entities import Apiario
 
+
 class TestApiarioUnit(unittest.TestCase):
     def test_if_is_a_dataclass(self):
-        self.assertTrue(is_dataclass(Apiario)) # Verifica se a classe Apiario é data classe
-# ir do test mais simples posssível
-    def test_construtor(self): #testa a criação do construtor
-        apiario = Apiario(id=1, id_usuario = 1, nome ="Favo Amarelo" )
+        self.assertTrue(
+            is_dataclass(Apiario)
+        )  # Verifica se a classe Apiario é data classe
+
+    # ir do test mais simples posssível
+    def test_construtor(self):  # testa a criação do construtor
+        apiario = Apiario(id=1, id_usuario=1, nome="Favo Amarelo")
         self.assertEqual(apiario.id, 1)
         self.assertEqual(apiario.id_usuario, 1)
         self.assertEqual(apiario.nome, "Favo Amarelo")
@@ -28,7 +32,7 @@ class TestApiarioUnit(unittest.TestCase):
         self.assertIsNone(apiario.latitude)
         self.assertIsNone(apiario.longitude)
         self.assertIsNone(apiario.observacao)
-        data_criacao = datetime.now() #testando a data de criação
+        data_criacao = datetime.now()  # testando a data de criação
         apiario = Apiario(
             id=1,
             id_usuario=1,
@@ -48,8 +52,7 @@ class TestApiarioUnit(unittest.TestCase):
             telefone="11999999999",
             latitude=0.0,
             longitude=0.0,
-            observacao="Observaçao"
-
+            observacao="Observaçao",
         )
         self.assertEqual(apiario.id, 1)
         self.assertEqual(apiario.id_usuario, 1)
@@ -70,10 +73,12 @@ class TestApiarioUnit(unittest.TestCase):
         self.assertEqual(apiario.latitude, 0.0)
         self.assertEqual(apiario.longitude, 0.0)
         self.assertEqual(apiario.observacao, "Observaçao")
-    def test_if_data_criacao_is_generated_in_constructor(self): #testa se a data de criação é um datetime
+
+    def test_if_data_criacao_is_generated_in_constructor(
+        self,
+    ):  # testa se a data de criação é um datetime
         apiario = Apiario(id=1, id_usuario=1, nome="Favo Amarelo")
         apiario2 = Apiario(id=2, id_usuario=2, nome="Bico Doce")
-        self.assertNotEqual( # Essa forma sempre funcionará, pois a data de criação é gerada no construtor
-            apiario.data_criacao.timestamp(),
-            apiario2.data_criacao.timestamp() )
-
+        self.assertNotEqual(  # Essa forma sempre funcionará, pois a data de criação é gerada no construtor
+            apiario.data_criacao.timestamp(), apiario2.data_criacao.timestamp()
+        )

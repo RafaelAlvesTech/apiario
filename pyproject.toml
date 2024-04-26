@@ -1,20 +1,18 @@
-[project]
-name = "app"
+[tool.poetry]
+name = "apiario"
 version = "0.1.0"
-description = "Default template for PDM package"
-authors = [
-    {name = "RafaelAlvesTech", email = "rafaelpereiraalves@ufba.br"},
-]
-dependencies = []
-requires-python = "==3.10.*"
+description = ""
+authors = ["Rafael  Alves <97904425+RafaelAlvesTech@users.noreply.github.com>"]
+license = "MIT"
 readme = "README.md"
-license = {text = "MIT"}
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.0.4"
+djangorestframework = "^3.15.1"
+mysqlclient = "^2.2.4"
 
 
-[tool.pdm]
-distribution = false
-
-[tool.pdm.dev-dependencies]
-dev = [
-    "autopep8>=2.1.0",
-]
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
