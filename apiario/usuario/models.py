@@ -49,10 +49,16 @@ from django.db import models
 
 # ?>
 class Usuario(models.Model):
-    nome = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
+    nome = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     telefone = models.CharField(max_length=20)
     senha = models.CharField(max_length=128)
     status = models.CharField(max_length=1, default='A')
     data_cadastro = models.DateTimeField(auto_now_add=True)
     data_confirmacao = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        managed = False
+        db_table = 'usuario'
+      
+

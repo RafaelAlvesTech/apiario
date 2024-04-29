@@ -1,19 +1,33 @@
 from rest_framework import generics
+from rest_framework.exceptions import ValidationError
 from .serializers import UsuarioSerializer
 from usuario.models import Usuario
-
-
 
 class UsuarioCreate(generics.CreateAPIView):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
- # email validation
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
+
+    def perform_create(self, serializer):
         email = serializer.validated_data['email']
         if Usuario.objects.filter(email=email).exists():
-            return Response({'code': 0, 'result': 'Email já cadastrado.'}, status=status.HTTP_400_BAD_REQUEST)
-        self.perform_create(serializer)
-        headers = self.get_success_headers(serializer.data)
-        return Response({'code': 1, 'result': 'Usuário cadastrado com sucesso.'}, status=status.HTTP_201_CREATED, headers=headers)
+            raise ValidationError({'code': 0, 'result': 'Email já cadastrado.'}) 
+        super().perform_create(serializer)
+    
+    #listar todos os usuarios
+class UsuarioList(generics.ListAPIView):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
+
+    
+class  UsuarioRemove(generics.DestroyAPIView):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
+
+class UsuarioListOne(generics.RetrieveAPIView):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
+
+# atualizar senha
+class UsuarioUpdate(generics.UpdateAPIView):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
