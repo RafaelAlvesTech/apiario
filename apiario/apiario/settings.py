@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'pymysql',
     'drf_yasg',
+    'rest_framework_simplejwt',
     'usuario',
 
 ]
@@ -112,6 +113,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+    
+    
+
 
 
 # Internationalization

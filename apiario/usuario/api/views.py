@@ -19,7 +19,7 @@ class UsuarioList(generics.ListAPIView):
     serializer_class = UsuarioSerializer
 
     
-class  UsuarioRemove(generics.DestroyAPIView):
+class  UsuarioRemove(generics.RetrieveDestroyAPIView):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
 
@@ -28,6 +28,19 @@ class UsuarioListOne(generics.RetrieveAPIView):
     serializer_class = UsuarioSerializer
 
 # atualizar senha
-class UsuarioUpdate(generics.UpdateAPIView):
+class UsuarioUpdate(generics.RetrieveUpdateAPIView):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
+
+class UsuarioUpdateSenha(generics.RetrieveUpdateAPIView):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
+
+    def perform_update(self, serializer):
+        email = serializer.validated_data['email']
+        senha = serializer.validated_data['senha']
+        if Usuario.objects.filter(email=email).exists():
+            Usuario.objects.filter(email=email).update(senha=senha)
+        else:
+            raise ValidationError({'code': 0, 'result': 'Email não cadastrado.'}) 
+        super().perform_update(serializer)

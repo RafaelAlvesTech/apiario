@@ -1,7 +1,12 @@
 from rest_framework import serializers
-from usuario.models import UsuarioCreate
+from usuario.models import Usuario
 
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UsuarioCreate
-        fields = '__all__'
+        model = Usuario
+        exclude = ['status']
+
+
+
+    
+        

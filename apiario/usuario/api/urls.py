@@ -5,8 +5,8 @@ from .views import UsuarioCreate, UsuarioList, UsuarioListOne, UsuarioRemove, Us
 urlpatterns = [
     path('criar_usuario/', UsuarioCreate.as_view()),
     path('listar_usuarios/', UsuarioList.as_view()),
-    path('listar_um_usuario/<int:id>/', UsuarioListOne.as_view()),
-    path('remover_usuario/<int:id>/', UsuarioRemove.as_view()),
-    path('atualizar_usuario/<int:id>/', UsuarioUpdate.as_view())
-
+    path('listar_um_usuario/<int:pk>/', UsuarioListOne.as_view()),
+    path('remover_usuario/<int:pk>/', UsuarioRemove.as_view()),
+    path('atualizar_usuario/<int:pk>/', UsuarioUpdate.as_view()),
+    path ('atualizar_senha/<str:pk>/', UsuarioUpdate.as_view()),
 ]

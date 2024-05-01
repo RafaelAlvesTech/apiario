@@ -54,7 +54,7 @@ class Usuario(models.Model):
     email = models.EmailField(unique=True)
     telefone = models.CharField(max_length=20)
     senha = models.CharField(max_length=128)
-    status = models.CharField(max_length=1, default='A')
+    status = models.CharField(max_length=1, default='A', blank=True, null=True, auto_created=True)
     data_cadastro = models.DateTimeField(auto_now_add=True)
     data_confirmacao = models.DateTimeField(auto_now_add=True)
     class Meta:
