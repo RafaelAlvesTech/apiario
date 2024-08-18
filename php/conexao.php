@@ -9,7 +9,7 @@ $banco = "medesp76_apiario";
 $host = "br204.hostgator.com.br";
 
 $usuario = "medesp76_master";
-$senha = "mb@2022";
+$senha = "";
 
 
 
